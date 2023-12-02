@@ -1,2 +1,2 @@
 # Maze-Runner-Arcade-Game
-A simple arcade game completed by solving the maze
+A simple arcade game where the player aims to capture the flag by solving the maze.
