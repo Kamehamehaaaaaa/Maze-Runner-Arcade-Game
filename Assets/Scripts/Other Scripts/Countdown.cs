@@ -8,6 +8,7 @@ public class Countdown : MonoBehaviour {
     public int timeLeft = 60;
     public Text countdownText;
     public Text restartText;
+    public bool hasRun = false;
 
     // Use this for initialization
     void Start()
@@ -34,8 +35,18 @@ public class Countdown : MonoBehaviour {
         {
             StopCoroutine("LoseTime");
             countdownText.text = "";
-            restartText.text = "";
+            // restartText.text = "";
+            if (hasRun == false)
+            {
+                Invoke("LoadQuitGameText", 5f);
+            }
         }
+    }
+
+    void LoadQuitGameText()
+    {
+        restartText.text = "Press Q to Quit Maze";
+        hasRun = true;
     }
 
     IEnumerator LoseTime()
